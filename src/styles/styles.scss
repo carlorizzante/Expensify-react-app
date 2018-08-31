@@ -1,0 +1,25 @@
+// Global settings
+
+$primary-color: #20222b;
+
+$reset-font-size: 62.5%;
+$basic-padding: 1.6rem;
+
+$font-family: Helvetica, Arial, sans-serif;
+$basic-font-size: 1.8rem;
+// $basic-line-height: 1.54rem;
+$background-color: white;
+
+$text-color: #333;
+$secondary-text-color: #a5afd7;
+
+// Dev Settings
+
+$devbg1: rgba(100,255,255,.05);
+$devbg2: rgba(255,100, 255,.05);
+$devbg3: rgba(255,255, 100,.05);
+
+@import './base/base';
+@import './components/header';
+
+// @import './dev';
