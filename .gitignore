@@ -9,9 +9,6 @@
 # Enzyme snapshot folder
 __snapshots__/
 
-# Public bundle.js
-public/bundle.js
-
 # Files that might appear in the root of a volume
 .DocumentRevisions-V100
 .fseventsd
@@ -39,6 +36,11 @@ jspm_packages/
 
 # Build folder
 build/
+
+# Public folder
+public/**/*.js
+public/**/*.map
+public/**/*.css
 
 # Compiled binary addons (https://nodejs.org/api/addons.html)
 build/Release

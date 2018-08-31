@@ -31,7 +31,7 @@ let count = 0;
 const unsubscribe = store.subscribe(_ => {
   const { expenses, filters } = store.getState();
   // console.log(count++, getVisibleExpenses(expenses, filters));
-  // console.table(getVisibleExpenses(expenses, filters));
+  console.table(getVisibleExpenses(expenses, filters));
 });
 
 // ...
