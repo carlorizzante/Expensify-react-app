@@ -37,10 +37,8 @@ jspm_packages/
 # Build folder
 build/
 
-# Public folder
-public/**/*.js
-public/**/*.map
-public/**/*.css
+# Distribution folder
+dist/
 
 # Compiled binary addons (https://nodejs.org/api/addons.html)
 build/Release
