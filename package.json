@@ -1,16 +1,18 @@
 {
   "name": "expensify-app",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "build:dev": "webpack --env development",
     "build:prod": "webpack -p --env production",
-    "build-babel": "babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch",
     "dev-server": "webpack-dev-server --mode=development",
     "test": "jest --config=jest.config.json",
     "start": "node server/server.js",
     "heroku-postbuild": "yarn run build:prod"
+  },
+  "engines": {
+    "node": "9.2.1"
   },
   "dependencies": {
     "babel-cli": "^6.26.0",
