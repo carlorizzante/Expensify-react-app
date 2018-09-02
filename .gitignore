@@ -7,7 +7,7 @@
 ._*
 
 # Enzyme snapshot folder
-__snapshots__/
+#__snapshots__/
 
 # Files that might appear in the root of a volume
 .DocumentRevisions-V100
