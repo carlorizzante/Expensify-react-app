@@ -1,13 +1,13 @@
 {
   "name": "expensify-app",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build:dev": "webpack --env development",
+    "build:dev": "webpack",
     "build:prod": "webpack -p --env production",
-    "dev-server": "webpack-dev-server --mode=development",
-    "test": "jest --config=jest.config.json",
+    "dev-server": "webpack-dev-server",
+    "test": "cross-env NODE_ENV=test jest --config=jest.config.json",
     "start": "node server/server.js",
     "heroku-postbuild": "yarn run build:prod"
   },
@@ -24,6 +24,7 @@
     "babel-preset-react": "^6.24.1",
     "css-loader": "^1.0.0",
     "express": "^4.16.3",
+    "firebase": "^5.4.2",
     "mini-css-extract-plugin": "^0.4.2",
     "moment": "^2.22.2",
     "node-sass": "^4.9.2",
@@ -37,17 +38,21 @@
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0",
     "sass-loader": "^7.0.3",
     "style-loader": "^0.21.0",
     "uuid": "^3.3.2",
     "validator": "^10.4.0"
   },
   "devDependencies": {
+    "cross-env": "^5.2.0",
+    "dotenv": "^6.0.0",
     "enzyme": "^3.4.4",
     "enzyme-adapter-react-16": "^1.2.0",
     "enzyme-to-json": "^3.3.4",
     "jest": "^23.4.1",
     "react-test-renderer": "^16.4.2",
+    "redux-mock-store": "^1.5.3",
     "webpack": "^4.15.1",
     "webpack-cli": "^3.0.8",
     "webpack-dev-server": "^3.1.4"
