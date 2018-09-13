@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import moment from 'moment';
 import numeral from 'numeral';
-import { removeExpense } from '../actions/expenses.js';
+import { startRemoveExpense } from '../actions/expenses.js';
 
 export const ExpenseListItem = ({ dispatch, id, description, amount, createdAt }) => {
-  const handleRemove = _ => dispatch(removeExpense(id));
+  const handleRemove = _ => dispatch(startRemoveExpense(id));
   return (
     <li className="list__item">
       <h3><Link to={ `/edit/${id}` }>{ description }</Link></h3>
