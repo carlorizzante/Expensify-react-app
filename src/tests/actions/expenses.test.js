@@ -1,11 +1,26 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import { addExpense, startAddExpense, editExpense, removeExpense } from '../../actions/expenses.js';
+import {
+  addExpense,
+  startAddExpense,
+  editExpense,
+  removeExpense,
+  setExpenses,
+  startSetExpenses
+ } from '../../actions/expenses.js';
 import moment from 'moment';
 import expenses from '../fixtures/expenses.js';
 import database from '../../firebase/firebase.js';
 
 const createMockStore = configureMockStore([ thunk ]);
+
+beforeEach((done) => {
+  const expensesData = {};
+  expenses.forEach(({ id, description, note, amount, createdAt }) => {
+    expensesData[id] = { description, note, amount, createdAt };
+  });
+  database.ref('expenses').set(expensesData).then(() => done());
+});
 
 test('should setup add expense action object with provided values', () => {
   const action = addExpense(expenses[2]);
@@ -15,6 +30,7 @@ test('should setup add expense action object with provided values', () => {
   });
 });
 
+// Before Firebase
 // test('should setup add expense action object with default values', () => {
 //   const expenseDefault = {
 //     description: '',
@@ -100,7 +116,7 @@ test('should setup remove expense action object', () => {
 test('should setup edit expense action object', () => {
   const id = Math.floor(Math.random() * 1000);
   const updates = {
-    not_relevant: 'Maecenas faucibus mollis interdum.'
+    description: 'Maecenas faucibus mollis interdum.'
   }
   const action = editExpense(id, updates);
   expect(action).toEqual({
@@ -108,4 +124,25 @@ test('should setup edit expense action object', () => {
     id,
     updates
   });
+});
+
+test('should setup set expenses action object with data', () => {
+  const action = setExpenses(expenses);
+  expect(action).toEqual({
+    type: 'SET_EXPENSES',
+    expenses
+  });
+});
+
+test('should fetch expenses from database', (done) => {
+  const store = createMockStore({});
+  store.dispatch(startSetExpenses())
+    .then(() => {
+      const actions = store.getActions();
+      expect(actions[0]).toEqual({
+        type: 'SET_EXPENSES',
+        expenses
+      });
+      done();
+    });
 });
