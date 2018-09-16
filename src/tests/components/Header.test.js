@@ -3,7 +3,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 // import toJson from 'enzyme-to-json'; // added via jest.config.json
 
-import Header from '../../components/Header.js';
+import { Header } from '../../components/Header.js';
 
 // // Testing with react-test-renderer
 // // This test is redundant, ReactShallowRenderer is substituted by Enzyme
@@ -15,7 +15,7 @@ import Header from '../../components/Header.js';
 
 // Testing with Enzyme
 test('should render Header component correctly', () => {
-  const wrapper = shallow(<Header/>);
+  const wrapper = shallow(<Header startLogout={ () => {} }/>);
   expect(wrapper.find('h1').length).toBe(1);
   expect(wrapper.find('h1').text()).toBe("Expensify App");
 
@@ -25,4 +25,11 @@ test('should render Header component correctly', () => {
 
   expect(wrapper).toMatchSnapshot();
   // expect(toJson(wrapper)).toMatchSnapshot(); // added via jest.config.json
-})
+});
+
+test('should call startLogout on button click', () => {
+  const startLogout = jest.fn();
+  const wrapper = shallow(<Header startLogout={ startLogout }/>);
+  wrapper.find('button').simulate('click');
+  expect(startLogout).toHaveBeenCalled();
+});

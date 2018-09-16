@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render the expense 1`] = `
+<li
+  className="list__item"
+>
+  <h3>
+    <Link
+      replace={false}
+      to="/edit/bc23"
+    >
+      A bit later
+    </Link>
+  </h3>
+  <p>
+    $2.00
+    <span>
+       - 
+    </span>
+    <i>
+      22nd December 1969
+    </i>
+  </p>
+  <button
+    onClick={[Function]}
+  >
+    Remove
+  </button>
+  <Link
+    replace={false}
+    to="/edit/bc23"
+  >
+    Edit
+  </Link>
+</li>
+`;

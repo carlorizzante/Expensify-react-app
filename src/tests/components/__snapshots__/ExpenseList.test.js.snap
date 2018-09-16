@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render ExpenseList with empty message 1`] = `
+<div>
+  <ul>
+    <li>
+      No expense, create one. Go head!
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`should render ExpenseList with expenses 1`] = `
+<div>
+  <ul>
+    <Connect(ExpenseListItem)
+      amount={100}
+      createdAt={0}
+      description="In the past"
+      id="ab12"
+      key="0"
+      note="..."
+    />
+    <Connect(ExpenseListItem)
+      amount={200}
+      createdAt={-864000000}
+      description="A bit later"
+      id="bc23"
+      key="1"
+      note="Maecenas sed diam eget risus varius blandit sit amet non magna."
+    />
+    <Connect(ExpenseListItem)
+      amount={300}
+      createdAt={864000000}
+      description="Much later"
+      id="vf45"
+      key="2"
+      note="Maecenas sed diam eget risus varius blandit sit amet non magna."
+    />
+  </ul>
+</div>
+`;

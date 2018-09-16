@@ -3,22 +3,26 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import moment from 'moment';
 
-import AppRouter from './routers/AppRouter.js';
+import AppRouter, { history } from './routers/AppRouter.js';
 import storeConfig from './store/store.config.js';
 
 // import { addExpense } from './actions/expenses.js';
 import { startSetExpenses } from './actions/expenses.js';
-import { setTextFilter } from './actions/filters.js';
+// import { setTextFilter } from './actions/filters.js';
+import { login, logout } from './actions/auth.js';
 import getVisibleExpenses from './selectors/expenses.js';
 
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import 'react-dates/lib/css/_datepicker.css';
 
-import firebase from './firebase/firebase.js';
+import { firebase } from './firebase/firebase.js';
 
 // Initialize store
 const store = storeConfig();
+
+// Track App rendering
+let hasRendered = false;
 
 const jsx = (
   <Provider store={ store }>
@@ -26,22 +30,45 @@ const jsx = (
   </Provider>
 );
 
+const renderApp = () => {
+  if (!hasRendered) {
+    ReactDOM.render(jsx, document.getElementById('app'));
+    hasRendered = true;
+  }
+}
+
 ReactDOM.render(<p>Loading...</p>, document.getElementById('app'));
 
-store.dispatch(startSetExpenses())
-  .then(() => {
-    ReactDOM.render(jsx, document.getElementById('app'));
-  });
+firebase.auth().onAuthStateChanged((user) => {
+  // if (user) console.log("User login");
+  // else console.log("User logout");
+
+  if (user) {
+    console.log("uid", user.uid);
+    store.dispatch(login(user.uid));
+    store.dispatch(startSetExpenses())
+      .then(() => {
+        renderApp();
+        if (history.location.pathname == '/') history.push('/dashboard');
+      });
+  }
+  else {
+    console.log("User not authenticated.");
+    store.dispatch(logout());
+    renderApp();
+    history.push('/');
+  }
+});
 
 // ...
 
-let count = 0;
-const unsubscribe = store.subscribe(_ => {
-  const { expenses, filters } = store.getState();
+// let count = 0;
+// const unsubscribe = store.subscribe(_ => {
+//   const { expenses, filters } = store.getState();
   // console.log(count++, getVisibleExpenses(expenses, filters));
   // console.log("getVisibleExpenses");
   // console.table(getVisibleExpenses(expenses, filters));
-});
+// });
 
 // ...
 

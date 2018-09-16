@@ -8,7 +8,7 @@ html {
 }
 body {
   margin: 0;
-  padding: 0;
+  padding: $basic-body-padding;
   font-size: $basic-font-size;
 }
 button:not([disabled]),

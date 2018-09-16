@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Header component correctly 1`] = `
+<header>
+  <h1>
+    Expensify App
+  </h1>
+  <nav>
+    <ul>
+      Navigation
+      <li>
+        <NavLink
+          activeClassName="is-active"
+          aria-current="page"
+          exact={true}
+          to="/"
+        >
+          Login
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          activeClassName="is-active"
+          aria-current="page"
+          exact={true}
+          to="/dashboard"
+        >
+          Dashboard
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          activeClassName="is-active"
+          aria-current="page"
+          exact={true}
+          to="/create"
+        >
+          Create Expense
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          activeClassName="is-active"
+          aria-current="page"
+          exact={true}
+          to="/help"
+        >
+          Help
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          activeClassName="is-active"
+          aria-current="page"
+          exact={true}
+          to="/about"
+        >
+          About
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          activeClassName="is-active"
+          aria-current="page"
+          exact={true}
+          to="/404"
+        >
+          404
+        </NavLink>
+      </li>
+      <li>
+        <button
+          className="btn btn-primary"
+          onClick={[Function]}
+        >
+          Logout
+        </button>
+      </li>
+    </ul>
+  </nav>
+</header>
+`;
