@@ -7,17 +7,6 @@ exports[`should render Header component correctly 1`] = `
   </h1>
   <nav>
     <ul>
-      Navigation
-      <li>
-        <NavLink
-          activeClassName="is-active"
-          aria-current="page"
-          exact={true}
-          to="/"
-        >
-          Login
-        </NavLink>
-      </li>
       <li>
         <NavLink
           activeClassName="is-active"
@@ -36,36 +25,6 @@ exports[`should render Header component correctly 1`] = `
           to="/create"
         >
           Create Expense
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          activeClassName="is-active"
-          aria-current="page"
-          exact={true}
-          to="/help"
-        >
-          Help
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          activeClassName="is-active"
-          aria-current="page"
-          exact={true}
-          to="/about"
-        >
-          About
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          activeClassName="is-active"
-          aria-current="page"
-          exact={true}
-          to="/404"
-        >
-          404
         </NavLink>
       </li>
       <li>

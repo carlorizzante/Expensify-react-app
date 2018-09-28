@@ -4,6 +4,7 @@ import { Router, Route, Switch } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 
 import PrivateRoute from './PrivateRoute.js';
+import PublicRoute from './PublicRoute.js';
 
 // import Header from '../components/Header.js';
 
@@ -25,12 +26,10 @@ const AppRouter = (props) => (
     <div>
       {/* <Header/> */}
       <Switch>
-        <Route path="/" component={ LoginPage } exact/>
+        <PublicRoute path="/" component={ LoginPage } exact/>
         <PrivateRoute path="/dashboard" component={ ExpenseDashboardPage } exact/>
         <PrivateRoute path="/create" component={ AddExpensePage } exact/>
         <PrivateRoute path="/edit/:id" component={ EditExpensePage } exact/>
-        <Route path="/help" component={ HelpPage } exact/>
-        <Route path="/about" component={ AboutPage }/>
         <Route component={ Page404 }/>
       </Switch>
     </div>
