@@ -13,7 +13,7 @@ module.exports = (env) => {
   const CSSExtract = new MiniCssExtractPlugin({ filename: 'styles.css' });
 
   return {
-    entry: './src/app.js',
+    entry: ['babel-polyfill', './src/app.js'],
     // entry: './playground/destructuring.js',
     // entry: './playground/redux-101.js',
     // entry: './playground/redux-102.js',
