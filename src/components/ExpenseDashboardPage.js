@@ -5,7 +5,7 @@ import ExpensesSummary from './ExpensesSummary.js';
 
 const ExpenseDashboardPage = (props) => (
   <div>
-    <h1>Dashboard</h1>
+    {/* <h1>Dashboard</h1> */}
     <ExpensesSummary/>
     <ExpenseListFilters/>
     <ExpenseList/>

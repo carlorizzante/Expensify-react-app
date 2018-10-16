@@ -1,0 +1,20 @@
+.form-group {
+  margin-top: $m-size;
+  
+  .input-group__item {
+    display: flex;
+    > * {
+      flex: 1;
+      margin: 0 auto $s-size;
+    }
+    .SingleDatePickerInput {
+      width: 100%;
+    }
+  }
+  .btn {
+    margin-right: $s-size;
+  }
+  .btn:last-child {
+    margin-right: 0;
+  }
+}

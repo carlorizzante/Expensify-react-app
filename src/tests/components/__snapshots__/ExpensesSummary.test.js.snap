@@ -1,40 +1,109 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render correctly ExpensesSummary with 1 expense 1`] = `
-<div>
-  <h1>
-    Viewing 
-    1
-     
-    expense
-     totalling 
-    $120.95
-  </h1>
+<div
+  className="page-header"
+>
+  <div
+    className="content-container"
+  >
+    <h1
+      className="page-header__title"
+    >
+      Viewing 
+      <strong>
+        1
+      </strong>
+       
+      expense
+       totalling 
+      <strong>
+        $120.95
+      </strong>
+    </h1>
+    <div
+      className="page-header__actions"
+    >
+      <Link
+        className="btn btn-primary"
+        replace={false}
+        to="/create"
+      >
+        Add Expense
+      </Link>
+    </div>
+  </div>
 </div>
 `;
 
 exports[`should render correctly ExpensesSummary with multiple expenses 1`] = `
-<div>
-  <h1>
-    Viewing 
-    3
-     
-    expenses
-     totalling 
-    $610.25
-  </h1>
+<div
+  className="page-header"
+>
+  <div
+    className="content-container"
+  >
+    <h1
+      className="page-header__title"
+    >
+      Viewing 
+      <strong>
+        3
+      </strong>
+       
+      expenses
+       totalling 
+      <strong>
+        $610.25
+      </strong>
+    </h1>
+    <div
+      className="page-header__actions"
+    >
+      <Link
+        className="btn btn-primary"
+        replace={false}
+        to="/create"
+      >
+        Add Expense
+      </Link>
+    </div>
+  </div>
 </div>
 `;
 
 exports[`should render correctly ExpensesSummary with no expense 1`] = `
-<div>
-  <h1>
-    Viewing 
-    0
-     
-    expense
-     totalling 
-    $0.00
-  </h1>
+<div
+  className="page-header"
+>
+  <div
+    className="content-container"
+  >
+    <h1
+      className="page-header__title"
+    >
+      Viewing 
+      <strong>
+        0
+      </strong>
+       
+      expense
+       totalling 
+      <strong>
+        $0.00
+      </strong>
+    </h1>
+    <div
+      className="page-header__actions"
+    >
+      <Link
+        className="btn btn-primary"
+        replace={false}
+        to="/create"
+      >
+        Add Expense
+      </Link>
+    </div>
+  </div>
 </div>
 `;

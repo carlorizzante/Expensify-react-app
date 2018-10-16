@@ -19,9 +19,9 @@ test('should render Header component correctly', () => {
   expect(wrapper.find('h1').length).toBe(1);
   expect(wrapper.find('h1').text()).toBe("Expensify App");
 
-  expect(wrapper.find('nav').length).toBe(1);
-  expect(wrapper.find('ul').length).toBe(1);
-  expect(wrapper.find('li').length).toBeGreaterThanOrEqual(1);
+  // expect(wrapper.find('nav').length).toBe(1);
+  // expect(wrapper.find('ul').length).toBe(1);
+  // expect(wrapper.find('li').length).toBeGreaterThanOrEqual(1);
 
   expect(wrapper).toMatchSnapshot();
   // expect(toJson(wrapper)).toMatchSnapshot(); // added via jest.config.json

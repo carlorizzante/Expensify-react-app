@@ -6,20 +6,19 @@ import numeral from 'numeral';
 import { startRemoveExpense } from '../actions/expenses.js';
 
 export const ExpenseListItem = ({ dispatch, id, description, amount, createdAt }) => {
-  const handleRemove = _ => dispatch(startRemoveExpense(id));
+  // const handleRemove = _ => dispatch(startRemoveExpense(id));
   return (
-    <li className="list__item">
-      <h3><Link to={ `/edit/${id}` }>{ description }</Link></h3>
-      <p>
-        { numeral(amount / 100).format('$0,00.00') }
-         <span> - </span>
-        <i>
-          { moment(createdAt).format("Do MMMM YYYY") }
-        </i>
-      </p>
-      <button onClick={ handleRemove }>Remove</button>
-      <Link to={ `/edit/${id}` }>Edit</Link>
-    </li>
+    <Link
+      className="list-item"
+      to={ `/edit/${id}` }
+    >
+      <div>
+        <h3>{ description }</h3>
+        <i>{ moment(createdAt).format("Do MMMM YYYY") }</i>
+      </div>
+      <h3>{ numeral(amount / 100).format('$0,00.00') }</h3>
+      {/* <button onClick={ handleRemove }>Remove</button> */}
+    </Link>
   );
 }
 

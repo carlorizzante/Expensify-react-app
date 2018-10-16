@@ -1,0 +1,16 @@
+.page-header {
+  margin: 0 0 $m-size;
+  padding: $m-size 0;
+  background-color: #f7f7f7;
+}
+.page-header__title {
+  margin: 0;
+  font-weight: 300;
+  > strong {
+    font-weight: 700;
+  }
+}
+.page-header__actions {
+  margin: $m-size 0;
+  // background-color: teal;
+}

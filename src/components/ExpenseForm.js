@@ -71,41 +71,61 @@ export class ExpenseForm extends React.Component {
   }
   render() {
     return (
-      <form onSubmit={ this.handleFormSubmit }>
+      <form
+        className="form-group"
+        onSubmit={ this.handleFormSubmit }
+      >
         { this.state.showErrorMsg
           && <Message
-            className="message message--error"
-            message={ <p>Please provide <strong>description</strong> and <strong>amount</strong>.</p> }
+              className="form-group__error"
+              message={ <p>Please provide <strong>description</strong> and <strong>amount</strong>.</p> }
           />
         }
-        <input
-          type="text"
-          autoFocus
-          value={ this.state.description }
-          placeholder="Expense description..."
-          onChange={ this.handleDescriptionChange }
-        />
-        <input
-          type="text"
-          value={ this.state.amount }
-          placeholder="Amount"
-          onChange={ this.handleAmountChange }
-        />
-        <SingleDatePicker
-          date={ this.state.createdAt }
-          onDateChange={ this.handleDateChange }
-          focused={ this.state.calendarFocused }
-          onFocusChange={ this.handleCalendarFocusChange }
-          numberOfMonths={ 1 }
-          isOutsideRange={ (day) => false }
-        />
-        <textarea
-          value={ this.state.note }
-          placeholder="You can also write a bunch of notes..."
-          onChange={ this.handleNoteChange }
-        />
-        <button type="submit">Save</button>
-        { this.state.id && <button onClick={ this.handleRemoveExpense }>Remove</button> }
+        <div className="content-container">
+          <div className="input-group__item">
+            <input
+              type="text"
+              autoFocus
+              value={ this.state.description }
+              placeholder="Expense description..."
+              onChange={ this.handleDescriptionChange }
+            />
+          </div>
+          <div className="input-group__item">
+            <input
+              type="text"
+              value={ this.state.amount }
+              placeholder="Amount"
+              onChange={ this.handleAmountChange }
+            />
+          </div>
+          <div className="input-group__item">
+            <SingleDatePicker
+              date={ this.state.createdAt }
+              onDateChange={ this.handleDateChange }
+              focused={ this.state.calendarFocused }
+              onFocusChange={ this.handleCalendarFocusChange }
+              numberOfMonths={ 1 }
+              isOutsideRange={ (day) => false }
+            />
+          </div>
+          <div className="input-group__item">
+            <textarea
+              value={ this.state.note }
+              placeholder="You can also write a bunch of notes..."
+              onChange={ this.handleNoteChange }
+            />
+          </div>
+          <button
+            type="submit"
+            className="btn btn-primary"
+          >Save expense</button>
+          { this.state.id
+            && <button
+                className="btn btn-secondary"
+                onClick={ this.handleRemoveExpense }
+              >Remove expense</button> }
+        </div>
       </form>
     );
   }

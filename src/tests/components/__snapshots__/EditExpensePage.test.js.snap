@@ -2,9 +2,19 @@
 
 exports[`should render EditExpensePage correctly 1`] = `
 <div>
-  <h1>
-    Edit Expense
-  </h1>
+  <div
+    className="page-header"
+  >
+    <div
+      className="content-container"
+    >
+      <h1
+        className="page-header__title"
+      >
+        Edit Expense
+      </h1>
+    </div>
+  </div>
   <Connect(ExpenseForm)
     expense={
       Object {

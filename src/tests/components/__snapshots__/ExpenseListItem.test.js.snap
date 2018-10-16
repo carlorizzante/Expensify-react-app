@@ -1,36 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render the expense 1`] = `
-<li
-  className="list__item"
+<Link
+  className="list-item"
+  replace={false}
+  to="/edit/bc23"
 >
-  <h3>
-    <Link
-      replace={false}
-      to="/edit/bc23"
-    >
+  <div>
+    <h3>
       A bit later
-    </Link>
-  </h3>
-  <p>
-    $2.00
-    <span>
-       - 
-    </span>
+    </h3>
     <i>
       22nd December 1969
     </i>
-  </p>
-  <button
-    onClick={[Function]}
-  >
-    Remove
-  </button>
-  <Link
-    replace={false}
-    to="/edit/bc23"
-  >
-    Edit
-  </Link>
-</li>
+  </div>
+  <h3>
+    $2.00
+  </h3>
+</Link>
 `;

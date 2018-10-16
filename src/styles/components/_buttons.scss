@@ -1,0 +1,22 @@
+.btn {
+  display: inline-block;
+  padding: $btn-padding;
+  border-radius: $btn-border-radius;
+  border: $btn-border;
+  font-size: $btn-font-size;
+  font-weight: $btn-font-weight;
+  line-height: 1;
+  color: $btn-text-color;
+  text-decoration: none;
+}
+.btn-primary {
+  background-color: #1c88bf;
+}
+.btn-secondary {
+  background-color: #888888;
+}
+.btn-link {
+  background-color: transparent;
+  font-size: 105%;
+  font-weight: 200;
+}

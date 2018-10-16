@@ -6,6 +6,7 @@ import moment from 'moment';
 import AppRouter, { history } from './routers/AppRouter.js';
 import storeConfig from './store/store.config.js';
 
+import LoadingPage from './components/LoadingPage.js';
 // import { addExpense } from './actions/expenses.js';
 import { startSetExpenses } from './actions/expenses.js';
 // import { setTextFilter } from './actions/filters.js';
@@ -37,7 +38,7 @@ const renderApp = () => {
   }
 }
 
-ReactDOM.render(<p>Loading...</p>, document.getElementById('app'));
+ReactDOM.render(<LoadingPage/>, document.getElementById('app'));
 
 firebase.auth().onAuthStateChanged((user) => {
   // if (user) console.log("User login");

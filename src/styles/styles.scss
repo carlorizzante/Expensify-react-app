@@ -7,6 +7,15 @@ $basic-padding: 1.6rem;
 
 $font-family: Helvetica, Arial, sans-serif;
 $basic-font-size: 1.8rem;
+$font-size-large: 1.9rem;
+
+$btn-font-size: 1.6rem;
+$btn-font-weight: 400;
+$btn-text-color: white;
+$btn-padding: 1rem 1.5rem;
+$btn-border-radius: 3px;
+$btn-border: none;
+
 // $basic-line-height: 1.54rem;
 $background-color: white;
 
@@ -16,6 +25,13 @@ $secondary-text-color: #a5afd7;
 // Layout settings
 $basic-body-padding: 2rem;
 
+$s-size: 1.2rem;
+$m-size: 1.6rem;
+$l-size: 3.2rem;
+$xl-size: 4.8rem;
+
+$desktop-breakpoint: 45rem;
+
 // Dev Settings
 
 $devbg1: rgba(100,255,255,.05);
@@ -23,10 +39,29 @@ $devbg2: rgba(255,100, 255,.05);
 $devbg3: rgba(255,255, 100,.05);
 
 @import './base/base';
+@import './components/buttons';
+@import './components/box-layout';
+@import './components/content-container';
+@import './components/form-group';
 @import './components/header';
+@import './components/input-group';
+@import './components/lists';
+@import './components/loader';
+@import './components/page-header';
 
 body {
   // background-color: teal !important;
 }
 
 // @import './dev';
+
+.hide-on-mobile {
+  @media screen and (max-width: $desktop-breakpoint) {
+    display: none;
+  }
+}
+.hide-on-desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    display: none;
+  }
+}
